@@ -102,8 +102,8 @@ def water(s1, s2):
     print(align1)
     print(sym)
     print(align2)
-
-#ГЕНЕРАЦИЯ ЗНАЧЕНИЙ n и m
+ 
+#ГЕНЕРАЦИЯ ЗНАЧЕНИЙ n и m В ЗАДАННОМ ДИАПАЗОЕ
 n = random.randint(10, 10000)
 m = random.randint(10, 10000)
 print(n, m)
