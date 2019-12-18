@@ -106,13 +106,20 @@ def water(s1, s2):
 #ГЕНЕРАЦИЯ ЗНАЧЕНИЙ n и m В ЗАДАННОМ ДИАПАЗОНЕ
 n_numbers = [10, 100, 1000, 10000]
 m_numbers = [10, 100, 1000, 10000]
+my_time = []
+count_of_experiments = 20
 for n in n_numbers:
     for m in m_numbers:
         print(n, m)
-        a = []
-        b = []
-        generate_sequence(a, b, n, m)
-        #НАЧИНАЕМ ЗАМЕРЯТЬ ВРЕМЯ
-        start_time = time.time()
-        water(a, b)
-        print("--- %s seconds ---" % (time.time() - start_time))
+        for i in range(0, count_of_experiments):
+            a = []
+            b = []
+            generate_sequence(a, b, n, m)
+            #НАЧИНАЕМ ЗАМЕРЯТЬ ВРЕМЯ
+            start_time = time.time()
+            water(a, b)
+            my_time.append(time.time() - start_time)
+        #СЧИТАЕМ СРЕДНЕЕ АРИФМИТИЧЕСКОЕ ПО ПОЛУЧЕННЫМ ЗНАЧЕНИЯМ
+        t = np.mean(my_time)
+        print("----- %s seconds -----" % t)
+        my_time = []
