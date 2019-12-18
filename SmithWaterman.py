@@ -103,14 +103,16 @@ def water(s1, s2):
     print(sym)
     print(align2)
  
-#ГЕНЕРАЦИЯ ЗНАЧЕНИЙ n и m В ЗАДАННОМ ДИАПАЗОЕ
-n = random.randint(10, 10000)
-m = random.randint(10, 10000)
-print(n, m)
-a = []
-b = []
-#НАЧИНАЕМ ЗАМЕРЯТЬ ВРЕМЯ
-start_time = time.time()
-generate_sequence(a, b, n, m)
-water(a, b)
-print("--- %s seconds ---" % (time.time() - start_time))
+#ГЕНЕРАЦИЯ ЗНАЧЕНИЙ n и m В ЗАДАННОМ ДИАПАЗОНЕ
+n_numbers = [10, 100, 1000, 10000]
+m_numbers = [10, 100, 1000, 10000]
+for n in n_numbers:
+    for m in m_numbers:
+        print(n, m)
+        a = []
+        b = []
+        generate_sequence(a, b, n, m)
+        #НАЧИНАЕМ ЗАМЕРЯТЬ ВРЕМЯ
+        start_time = time.time()
+        water(a, b)
+        print("--- %s seconds ---" % (time.time() - start_time))
